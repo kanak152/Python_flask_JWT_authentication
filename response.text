@@ -1,0 +1,126 @@
+How to test at postman
+
+run app.py file then check via postman tool
+
+1:- http://127.0.0.1:5000
+
+method : GET 
+
+request paramater for body  : Not required 
+
+response :- 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Hello, World!</h1>
+</body>
+
+</html>
+
+http://127.0.0.1:5000/api/login
+
+method : POST 
+
+header : token not required since here token  will genrate
+
+request paramater for body  :  required 
+
+{
+"username": "testuser",
+"password": "testpassword"
+}
+
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjA1NjU0MywianRpIjoiNDBhMDlhYmUtZmJjNy00M2Q5LTk1YTEtM2E1YTU2OGViNzcwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3R1c2VyIiwibmJmIjoxNzE2MDU2NTQzLCJjc3JmIjoiYjAwMjMxZWItNjJhOS00MWNkLWIzMjYtN2EzN2I0MGYxOTM0IiwiZXhwIjoxNzE2MDU3NDQzfQ.kdNoAgojcO_STjo-8-lqdWUdlhPhk2-XlE5OqyPxuC4"
+}
+
+
+
+2:- http://127.0.0.1:5000/api/items
+
+method : GET 
+
+header : token required (replace with your token)
+
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjA1NTYwNSwianRpIjoiYmU3ODgzYmYtY2JiYS00YWRmLWE2ZDItMDllNDA3OGY1MDlmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3R1c2VyIiwibmJmIjoxNzE2MDU1NjA1LCJjc3JmIjoiZGRhNjFlM2QtMDM5NS00ZDY2LWFkOGMtNmVkMzIxNTAwYzQ3IiwiZXhwIjoxNzE2MDU2NTA1fQ.-Q0xOz1nZY6YJMqjomEcI7GCyraZQayLGi3UnBulzdE
+
+
+request paramater for body  : Not required 
+
+response :- 
+
+[
+    {
+        "description": "This is item 1",
+        "id": 1,
+        "name": "Item 1"
+    },
+    {
+        "description": "This is item 2",
+        "id": 2,
+        "name": "Item 2"
+    },
+    {
+        "description": "This is item 3",
+        "id": 3,
+        "name": "Item 3"
+    }
+]
+
+
+
+
+3:- http://127.0.0.1:5000/api/items/1
+
+method : GET 
+
+header : token required (replace with your token)
+
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjA1NTYwNSwianRpIjoiYmU3ODgzYmYtY2JiYS00YWRmLWE2ZDItMDllNDA3OGY1MDlmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3R1c2VyIiwibmJmIjoxNzE2MDU1NjA1LCJjc3JmIjoiZGRhNjFlM2QtMDM5NS00ZDY2LWFkOGMtNmVkMzIxNTAwYzQ3IiwiZXhwIjoxNzE2MDU2NTA1fQ.-Q0xOz1nZY6YJMqjomEcI7GCyraZQayLGi3UnBulzdE
+
+
+request paramater for body  : Not required 
+
+response :- 
+
+
+{
+    "description": "This is item 1",
+    "id": 1,
+    "name": "Item 1"
+}
+
+
+
+
+5:- http://127.0.0.1:5000/api/items
+
+method : GET 
+header : token required (replace with your token)
+
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjA1NTYwNSwianRpIjoiYmU3ODgzYmYtY2JiYS00YWRmLWE2ZDItMDllNDA3OGY1MDlmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3R1c2VyIiwibmJmIjoxNzE2MDU1NjA1LCJjc3JmIjoiZGRhNjFlM2QtMDM5NS00ZDY2LWFkOGMtNmVkMzIxNTAwYzQ3IiwiZXhwIjoxNzE2MDU2NTA1fQ.-Q0xOz1nZY6YJMqjomEcI7GCyraZQayLGi3UnBulzdE
+
+request paramater for body : required
+
+{"name": "New Item", "description": "This is a new item"}
+
+
+response :- 
+
+{
+    "description": "This is a new item",
+    "id": 4,
+    "name": "New Item"
+}
+
+
+
+
